@@ -26,7 +26,8 @@
       "Bash(git add:*)",
       "Bash(git commit -m \"$(cat <<''EOF''\nfeat: implémentation complète de TeamFlow avec auth, UI et système de couleurs\n\nAjout de toutes les fonctionnalités principales :\n\n**Authentication & Sécurité**\n- Intégration Better Auth (email/password + OAuth GitHub/Google)\n- Pages login et signup modernes avec shadcn/ui\n- Gestion de session sécurisée\n- Bouton retour à l''accueil sur les pages auth\n\n**Design & UI**\n- Système de couleurs centralisé (Midnight Purple)\n- Page d''accueil avec contraste optimisé (WCAG AAA)\n- Sidebar avec navigation et profil utilisateur\n- Effet glassmorphism sur les cartes\n- Support dark mode\n\n**Base de données**\n- Schéma Prisma complet (15+ modèles)\n- Configuration PostgreSQL (Neon)\n- Migrations initiales appliquées\n- Support multi-tenant avec Organizations\n\n**Features**\n- Dashboard avec organisations utilisateur\n- Kanban boards avec drag & drop (@dnd-kit)\n- Gestion de listes et cartes\n- Upload de fichiers (UploadThing)\n- Service email (Resend)\n\n**Documentation**\n- ARCHITECTURE.md : structure complète du projet\n- COLORS.md : guide du système de couleurs\n- CLAUDE.md : instructions pour Claude\n- README complet avec setup\n\n🎨 Thème par défaut: Midnight Purple (#6366f1 → #8b5cf6)\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
       "Bash(git push:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(git checkout:*)"
     ],
     "deny": [],
     "ask": []
