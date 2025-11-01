@@ -228,7 +228,7 @@ export function SignupForm({
                 <h2 className="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4">
                   Bienvenue sur TeamFlow
                 </h2>
-                <p className="text-zinc-600 dark:text-zinc-400 text-lg">
+                <p className="text-zinc-700 dark:text-zinc-300 text-lg font-medium">
                   Gérez vos projets en équipe avec une interface moderne et intuitive
                 </p>
               </div>
