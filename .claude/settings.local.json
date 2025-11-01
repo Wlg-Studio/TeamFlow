@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(pnpm add:*)",
+      "Bash(git mv:*)",
+      "Bash(pnpm run build)",
+      "Bash(pnpm prisma init:*)",
+      "Bash(pnpm prisma generate:*)",
+      "Bash(pnpm prisma migrate:*)",
+      "Bash(pnpm prisma studio:*)",
+      "Bash(pnpm tsx:*)",
+      "Bash(pnpm dev)",
+      "Bash(taskkill:*)",
+      "Bash(nul)",
+      "Bash(pnpm db:push:*)",
+      "Bash(pnpm prisma db push:*)",
+      "Bash(del .nextdevlock 2)",
+      "Bash(node:*)",
+      "Bash(pnpm install)",
+      "Bash(pnpm approve-builds:*)",
+      "Bash(pnpm db:generate:*)",
+      "Bash(npx shadcn@latest add:*)",
+      "Bash(ls:*)",
+      "Bash(del \"src\\app\\(auth)\\login\\page.tsx\")",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
