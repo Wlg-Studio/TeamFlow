@@ -69,10 +69,10 @@ export function LoginForm({
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card className="overflow-hidden p-0 glass-card border-0">
         <CardContent className="grid p-0 md:grid-cols-2">
-          <form onSubmit={handleSubmit} className="p-6 md:p-8">
+          <form onSubmit={handleSubmit} className="p-6 md:p-8 bg-gradient-to-br from-zinc-900/90 to-zinc-800/90 backdrop-blur-xl">
             <Link
               href="/"
-              className="inline-flex items-center gap-2 text-sm text-zinc-900 dark:text-zinc-100 hover:text-primary transition-colors mb-6"
+              className="inline-flex items-center gap-2 text-sm text-white hover:text-primary transition-colors mb-6"
             >
               <Home className="h-4 w-4" />
               Retour à l'accueil
@@ -82,10 +82,10 @@ export function LoginForm({
                 <div className="mb-2 inline-flex h-12 w-12 items-center justify-center rounded-2xl gradient-brand shadow-lg">
                   <LogIn className="h-6 w-6 text-white" />
                 </div>
-                <h1 className="text-2xl font-bold gradient-brand-text">
+                <h1 className="text-2xl font-bold text-white">
                   Bon retour !
                 </h1>
-                <p className="text-zinc-900 dark:text-zinc-100 text-balance font-medium">
+                <p className="text-white/90 text-balance font-medium">
                   Connectez-vous à votre compte TeamFlow
                 </p>
               </div>
