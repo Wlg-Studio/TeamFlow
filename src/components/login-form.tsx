@@ -72,7 +72,7 @@ export function LoginForm({
           <form onSubmit={handleSubmit} className="p-6 md:p-8">
             <Link
               href="/"
-              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-6"
+              className="inline-flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400 hover:text-primary transition-colors mb-6"
             >
               <Home className="h-4 w-4" />
               Retour à l'accueil
@@ -85,7 +85,7 @@ export function LoginForm({
                 <h1 className="text-2xl font-bold gradient-brand-text">
                   Bon retour !
                 </h1>
-                <p className="text-muted-foreground text-balance">
+                <p className="text-zinc-600 dark:text-zinc-400 text-balance">
                   Connectez-vous à votre compte TeamFlow
                 </p>
               </div>
@@ -175,18 +175,18 @@ export function LoginForm({
               </FieldDescription>
             </FieldGroup>
           </form>
-          <div className="gradient-brand relative hidden md:block overflow-hidden">
+          <div className="bg-zinc-50 dark:bg-zinc-900 relative hidden md:block overflow-hidden">
             <div className="absolute inset-0 overflow-hidden">
-              <div className="absolute -left-20 -top-20 h-64 w-64 animate-pulse rounded-full bg-white/10 blur-3xl" />
-              <div className="absolute -right-20 top-1/3 h-64 w-64 animate-pulse rounded-full bg-white/5 blur-3xl" style={{ animationDelay: "1s" }} />
-              <div className="absolute bottom-0 left-1/3 h-64 w-64 animate-pulse rounded-full bg-white/10 blur-3xl" style={{ animationDelay: "2s" }} />
+              <div className="absolute -left-20 -top-20 h-64 w-64 animate-pulse rounded-full bg-indigo-500/10 blur-3xl" />
+              <div className="absolute -right-20 top-1/3 h-64 w-64 animate-pulse rounded-full bg-purple-500/10 blur-3xl" style={{ animationDelay: "1s" }} />
+              <div className="absolute bottom-0 left-1/3 h-64 w-64 animate-pulse rounded-full bg-indigo-500/10 blur-3xl" style={{ animationDelay: "2s" }} />
             </div>
             <div className="relative z-10 flex h-full items-center justify-center p-8">
               <div className="text-center">
-                <h2 className="text-3xl font-bold text-white mb-4">
+                <h2 className="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4">
                   Bienvenue sur TeamFlow
                 </h2>
-                <p className="text-white/90 text-lg font-medium">
+                <p className="text-zinc-800 dark:text-zinc-200 text-lg font-semibold">
                   Gérez vos projets en équipe avec efficacité
                 </p>
               </div>
