@@ -86,7 +86,7 @@ export function SignupForm({
           <form onSubmit={handleSubmit} className="p-6 md:p-8 bg-gradient-to-br from-zinc-900/90 to-zinc-800/90 backdrop-blur-xl">
             <Link
               href="/"
-              className="inline-flex items-center gap-2 text-sm text-white hover:text-primary transition-colors mb-6"
+              className="inline-flex items-center gap-2 text-sm text-white hover:text-zinc-900 hover:bg-white border border-transparent hover:border-zinc-200 transition-all mb-6 px-3 py-1.5 rounded-md"
             >
               <Home className="h-4 w-4" />
               Retour à l'accueil
@@ -96,7 +96,7 @@ export function SignupForm({
                 <div className="mb-2 inline-flex h-12 w-12 items-center justify-center rounded-2xl gradient-brand shadow-lg">
                   <Sparkles className="h-6 w-6 text-white" />
                 </div>
-                <h1 className="text-2xl font-bold text-white">
+                <h1 className="text-2xl font-bold gradient-brand-text">
                   Créer votre compte
                 </h1>
                 <p className="text-white/90 text-balance font-medium">
@@ -113,7 +113,7 @@ export function SignupForm({
               )}
 
               <Field>
-                <FieldLabel htmlFor="name">Nom complet</FieldLabel>
+                <FieldLabel htmlFor="name" className="text-white">Nom complet</FieldLabel>
                 <Input
                   id="name"
                   type="text"
@@ -126,7 +126,7 @@ export function SignupForm({
               </Field>
 
               <Field>
-                <FieldLabel htmlFor="email">Email</FieldLabel>
+                <FieldLabel htmlFor="email" className="text-white">Email</FieldLabel>
                 <Input
                   id="email"
                   type="email"
@@ -144,7 +144,7 @@ export function SignupForm({
               <Field>
                 <Field className="grid grid-cols-2 gap-4">
                   <Field>
-                    <FieldLabel htmlFor="password">Mot de passe</FieldLabel>
+                    <FieldLabel htmlFor="password" className="text-white">Mot de passe</FieldLabel>
                     <Input
                       id="password"
                       type="password"
@@ -155,7 +155,7 @@ export function SignupForm({
                     />
                   </Field>
                   <Field>
-                    <FieldLabel htmlFor="confirm-password">
+                    <FieldLabel htmlFor="confirm-password" className="text-white">
                       Confirmer
                     </FieldLabel>
                     <Input
@@ -179,9 +179,11 @@ export function SignupForm({
                 </Button>
               </Field>
 
-              <FieldSeparator className="*:data-[slot=field-separator-content]:bg-card">
-                Ou continuer avec
-              </FieldSeparator>
+              <div className="flex items-center gap-4 py-4">
+                <div className="flex-1 border-t border-zinc-700"></div>
+                <span className="text-white/80 text-sm">Ou continuer avec</span>
+                <div className="flex-1 border-t border-zinc-700"></div>
+              </div>
 
               <Field className="grid grid-cols-2 gap-4">
                 <Button
@@ -209,7 +211,7 @@ export function SignupForm({
                 </Button>
               </Field>
 
-              <FieldDescription className="text-center">
+              <FieldDescription className="text-center text-white/90">
                 Vous avez déjà un compte ?{" "}
                 <Link href="/login" className="font-semibold text-primary hover-primary">
                   Se connecter

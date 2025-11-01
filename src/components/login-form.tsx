@@ -72,7 +72,7 @@ export function LoginForm({
           <form onSubmit={handleSubmit} className="p-6 md:p-8 bg-gradient-to-br from-zinc-900/90 to-zinc-800/90 backdrop-blur-xl">
             <Link
               href="/"
-              className="inline-flex items-center gap-2 text-sm text-white hover:text-primary transition-colors mb-6"
+              className="inline-flex items-center gap-2 text-sm text-white hover:text-zinc-900 hover:bg-white border border-transparent hover:border-zinc-200 transition-all mb-6 px-3 py-1.5 rounded-md"
             >
               <Home className="h-4 w-4" />
               Retour à l'accueil
@@ -82,7 +82,7 @@ export function LoginForm({
                 <div className="mb-2 inline-flex h-12 w-12 items-center justify-center rounded-2xl gradient-brand shadow-lg">
                   <LogIn className="h-6 w-6 text-white" />
                 </div>
-                <h1 className="text-2xl font-bold text-white">
+                <h1 className="text-2xl font-bold gradient-brand-text">
                   Bon retour !
                 </h1>
                 <p className="text-white/90 text-balance font-medium">
@@ -99,7 +99,7 @@ export function LoginForm({
               )}
 
               <Field>
-                <FieldLabel htmlFor="email">Email</FieldLabel>
+                <FieldLabel htmlFor="email" className="text-white">Email</FieldLabel>
                 <Input
                   id="email"
                   type="email"
@@ -113,10 +113,10 @@ export function LoginForm({
 
               <Field>
                 <div className="flex items-center">
-                  <FieldLabel htmlFor="password">Mot de passe</FieldLabel>
+                  <FieldLabel htmlFor="password" className="text-white">Mot de passe</FieldLabel>
                   <a
                     href="#"
-                    className="ml-auto text-sm text-primary hover:underline underline-offset-2"
+                    className="ml-auto text-sm text-white/80 hover:text-primary hover:underline underline-offset-2 transition-colors"
                   >
                     Mot de passe oublié ?
                   </a>
@@ -137,9 +137,11 @@ export function LoginForm({
                 </Button>
               </Field>
 
-              <FieldSeparator className="*:data-[slot=field-separator-content]:bg-card">
-                Ou continuer avec
-              </FieldSeparator>
+              <div className="flex items-center gap-4 py-4">
+                <div className="flex-1 border-t border-zinc-700"></div>
+                <span className="text-white/80 text-sm">Ou continuer avec</span>
+                <div className="flex-1 border-t border-zinc-700"></div>
+              </div>
 
               <Field className="grid grid-cols-2 gap-4">
                 <Button
@@ -167,7 +169,7 @@ export function LoginForm({
                 </Button>
               </Field>
 
-              <FieldDescription className="text-center">
+              <FieldDescription className="text-center text-white/90">
                 Vous n'avez pas de compte ?{" "}
                 <Link href="/signup" className="font-semibold text-primary hover-primary">
                   S'inscrire
