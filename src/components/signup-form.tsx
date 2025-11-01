@@ -86,7 +86,7 @@ export function SignupForm({
           <form onSubmit={handleSubmit} className="p-6 md:p-8">
             <Link
               href="/"
-              className="inline-flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400 hover:text-primary transition-colors mb-6"
+              className="inline-flex items-center gap-2 text-sm text-zinc-900 dark:text-zinc-100 hover:text-primary transition-colors mb-6"
             >
               <Home className="h-4 w-4" />
               Retour à l'accueil
@@ -99,7 +99,7 @@ export function SignupForm({
                 <h1 className="text-2xl font-bold gradient-brand-text">
                   Créer votre compte
                 </h1>
-                <p className="text-zinc-600 dark:text-zinc-400 text-balance">
+                <p className="text-zinc-900 dark:text-zinc-100 text-balance font-medium">
                   Rejoignez TeamFlow et gérez vos projets efficacement
                 </p>
               </div>
@@ -136,7 +136,7 @@ export function SignupForm({
                   required
                   disabled={loading}
                 />
-                <FieldDescription className="text-zinc-600 dark:text-zinc-400">
+                <FieldDescription className="text-zinc-900 dark:text-zinc-100 font-medium">
                   Nous utiliserons cette adresse pour vous contacter. Votre email ne sera jamais partagé.
                 </FieldDescription>
               </Field>
@@ -168,7 +168,7 @@ export function SignupForm({
                     />
                   </Field>
                 </Field>
-                <FieldDescription className="text-zinc-600 dark:text-zinc-400">
+                <FieldDescription className="text-zinc-900 dark:text-zinc-100 font-medium">
                   Doit contenir au moins 8 caractères.
                 </FieldDescription>
               </Field>
