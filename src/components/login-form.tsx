@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
 import { authClient } from "@/lib/auth-client"
+import { ShineAnimation } from "@/components/ui/shine-animation"
 import { Github, LogIn, Home } from "lucide-react"
 
 export function LoginForm({
@@ -52,17 +53,27 @@ export function LoginForm({
   }
 
   const handleGithubLogin = async () => {
-    await authClient.signIn.social({
-      provider: "github",
-      callbackURL: "/dashboard",
-    })
+    console.log("GitHub login clicked")
+    try {
+      await authClient.signIn.social({
+        provider: "github",
+        callbackURL: "/dashboard",
+      })
+    } catch (error) {
+      console.error("GitHub login error:", error)
+    }
   }
 
   const handleGoogleLogin = async () => {
-    await authClient.signIn.social({
-      provider: "google",
-      callbackURL: "/dashboard",
-    })
+    console.log("Google login clicked")
+    try {
+      await authClient.signIn.social({
+        provider: "google",
+        callbackURL: "/dashboard",
+      })
+    } catch (error) {
+      console.error("Google login error:", error)
+    }
   }
 
   return (
@@ -79,8 +90,9 @@ export function LoginForm({
             </Link>
             <FieldGroup>
               <div className="flex flex-col items-center gap-2 text-center">
-                <div className="mb-2 inline-flex h-12 w-12 items-center justify-center rounded-2xl gradient-brand shadow-lg">
-                  <LogIn className="h-6 w-6 text-white" />
+                <div className="mb-2 inline-flex h-12 w-12 items-center justify-center rounded-2xl gradient-brand shadow-lg relative overflow-hidden group">
+                  <ShineAnimation />
+                  <LogIn className="h-6 w-6 text-white relative z-10" />
                 </div>
                 <h1 className="text-2xl font-bold gradient-brand-text">
                   Bon retour !
@@ -132,8 +144,9 @@ export function LoginForm({
               </Field>
 
               <Field>
-                <Button type="submit" className="w-full gradient-brand" disabled={loading}>
-                  {loading ? "Connexion..." : "Se connecter"}
+                <Button type="submit" className="w-full gradient-brand relative overflow-hidden group cursor-pointer" disabled={loading}>
+                  <ShineAnimation />
+                  <span className="relative z-10">{loading ? "Connexion..." : "Se connecter"}</span>
                 </Button>
               </Field>
 
@@ -149,6 +162,7 @@ export function LoginForm({
                   type="button"
                   onClick={handleGithubLogin}
                   disabled={loading}
+                  className="cursor-pointer"
                 >
                   <Github className="h-5 w-5" />
                   <span className="sr-only">Se connecter avec GitHub</span>
@@ -158,6 +172,7 @@ export function LoginForm({
                   type="button"
                   onClick={handleGoogleLogin}
                   disabled={loading}
+                  className="cursor-pointer"
                 >
                   <svg className="h-5 w-5" viewBox="0 0 24 24">
                     <path

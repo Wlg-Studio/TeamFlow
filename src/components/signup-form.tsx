@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
 import { authClient } from "@/lib/auth-client"
+import { ShineAnimation } from "@/components/ui/shine-animation"
 import { Github, Sparkles, Home } from "lucide-react"
 
 export function SignupForm({
@@ -66,17 +67,27 @@ export function SignupForm({
   }
 
   const handleGithubSignup = async () => {
-    await authClient.signIn.social({
-      provider: "github",
-      callbackURL: "/dashboard",
-    })
+    console.log("GitHub signup clicked")
+    try {
+      await authClient.signIn.social({
+        provider: "github",
+        callbackURL: "/dashboard",
+      })
+    } catch (error) {
+      console.error("GitHub signup error:", error)
+    }
   }
 
   const handleGoogleSignup = async () => {
-    await authClient.signIn.social({
-      provider: "google",
-      callbackURL: "/dashboard",
-    })
+    console.log("Google signup clicked")
+    try {
+      await authClient.signIn.social({
+        provider: "google",
+        callbackURL: "/dashboard",
+      })
+    } catch (error) {
+      console.error("Google signup error:", error)
+    }
   }
 
   return (
@@ -93,8 +104,9 @@ export function SignupForm({
             </Link>
             <FieldGroup>
               <div className="flex flex-col items-center gap-2 text-center">
-                <div className="mb-2 inline-flex h-12 w-12 items-center justify-center rounded-2xl gradient-brand shadow-lg">
-                  <Sparkles className="h-6 w-6 text-white" />
+                <div className="mb-2 inline-flex h-12 w-12 items-center justify-center rounded-2xl gradient-brand shadow-lg relative overflow-hidden group">
+                  <ShineAnimation />
+                  <Sparkles className="h-6 w-6 text-white relative z-10" />
                 </div>
                 <h1 className="text-2xl font-bold gradient-brand-text">
                   Créer votre compte
@@ -174,8 +186,9 @@ export function SignupForm({
               </Field>
 
               <Field>
-                <Button type="submit" className="w-full gradient-brand" disabled={loading}>
-                  {loading ? "Création du compte..." : "Créer un compte"}
+                <Button type="submit" className="w-full gradient-brand relative overflow-hidden group cursor-pointer" disabled={loading}>
+                  <ShineAnimation />
+                  <span className="relative z-10">{loading ? "Création du compte..." : "Créer un compte"}</span>
                 </Button>
               </Field>
 
@@ -191,6 +204,7 @@ export function SignupForm({
                   type="button"
                   onClick={handleGithubSignup}
                   disabled={loading}
+                  className="cursor-pointer"
                 >
                   <Github className="h-5 w-5" />
                   <span className="sr-only">S'inscrire avec GitHub</span>
@@ -200,6 +214,7 @@ export function SignupForm({
                   type="button"
                   onClick={handleGoogleSignup}
                   disabled={loading}
+                  className="cursor-pointer"
                 >
                   <svg className="h-5 w-5" viewBox="0 0 24 24">
                     <path

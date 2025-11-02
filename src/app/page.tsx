@@ -3,6 +3,8 @@ import { auth } from "@/lib/auth"
 import { headers } from "next/headers"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { WaveAnimation } from "@/components/ui/wave-animation"
+import { ShineAnimation } from "@/components/ui/shine-animation"
 import { Sparkles, Zap, Users, TrendingUp } from "lucide-react"
 
 export default async function Home() {
@@ -49,14 +51,18 @@ export default async function Home() {
 
           <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
             <Link href="/signup">
-              <Button size="lg" className="group gradient-brand">
-                Commencer gratuitement
-                <Zap className="ml-2 h-4 w-4 transition-transform group-hover:rotate-12" />
+              <Button size="lg" className="cursor-pointer group relative overflow-hidden gradient-brand text-white border border-zinc-300">
+                <ShineAnimation />
+                <span className="relative z-10 flex items-center">
+                  Commencer gratuitement
+                  <Zap className="ml-2 h-4 w-4 transition-transform group-hover:rotate-12" />
+                </span>
               </Button>
             </Link>
             <Link href="/login">
-              <Button size="lg" variant="outline" className="group border-zinc-300 hover:border-indigo-500 hover:text-indigo-600">
-                Se connecter
+              <Button size="lg" variant="outline" className="cursor-pointer group relative overflow-hidden border-zinc-300 hover:border-indigo-500 hover:text-white">
+                <WaveAnimation color="gradient" />
+                <span className="relative z-10">Se connecter</span>
               </Button>
             </Link>
           </div>
@@ -65,8 +71,9 @@ export default async function Home() {
         {/* Features Grid */}
         <div className="mt-32 grid w-full max-w-6xl gap-6 md:grid-cols-3">
           <div className="group rounded-3xl p-8 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
-            <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl gradient-brand shadow-lg">
-              <Users className="h-7 w-7 text-white" />
+            <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl gradient-brand shadow-lg relative overflow-hidden">
+              <ShineAnimation />
+              <Users className="h-7 w-7 text-white relative z-10" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-zinc-900 dark:text-white">
               Collaboration
@@ -77,8 +84,9 @@ export default async function Home() {
           </div>
 
           <div className="group rounded-3xl p-8 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
-            <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl gradient-brand shadow-lg">
-              <Sparkles className="h-7 w-7 text-white" />
+            <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl gradient-brand shadow-lg relative overflow-hidden">
+              <ShineAnimation />
+              <Sparkles className="h-7 w-7 text-white relative z-10" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-zinc-900 dark:text-white">
               Interface moderne
@@ -89,8 +97,9 @@ export default async function Home() {
           </div>
 
           <div className="group rounded-3xl p-8 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
-            <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl gradient-brand shadow-lg">
-              <TrendingUp className="h-7 w-7 text-white" />
+            <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl gradient-brand shadow-lg relative overflow-hidden">
+              <ShineAnimation />
+              <TrendingUp className="h-7 w-7 text-white relative z-10" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-zinc-900 dark:text-white">
               Productivité
