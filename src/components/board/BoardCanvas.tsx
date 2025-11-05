@@ -163,62 +163,22 @@ export default function BoardCanvas({ board: initialBoard }: Props) {
   }
 
   return (
-    <div className="flex min-h-screen flex-col relative bg-zinc-50">
-      {/* Pattern de lignes courtes aléatoires */}
-      <svg className="absolute inset-0 w-full h-full" style={{ zIndex: 0 }}>
-        <defs>
-          <pattern id="randomLines" x="0" y="0" width="300" height="300" patternUnits="userSpaceOnUse">
-            {/* Lignes courtes dispersées aléatoirement avec tailles variées */}
-            {/* Très courtes */}
-            <line x1="42" y1="18" x2="54" y2="22" stroke="#d1d5db" strokeWidth="1" />
-            <line x1="198" y1="265" x2="207" y2="271" stroke="#d1d5db" strokeWidth="0.8" />
-            <line x1="83" y1="142" x2="94" y2="138" stroke="#d1d5db" strokeWidth="1.2" />
-
-            {/* Courtes */}
-            <line x1="127" y1="51" x2="148" y2="51" stroke="#d1d5db" strokeWidth="1.5" />
-            <line x1="25" y1="203" x2="39" y2="216" stroke="#d1d5db" strokeWidth="1" />
-            <line x1="245" y1="89" x2="263" y2="96" stroke="#d1d5db" strokeWidth="1.3" />
-            <line x1="163" y1="178" x2="178" y2="172" stroke="#d1d5db" strokeWidth="1.1" />
-
-            {/* Moyennes */}
-            <line x1="8" y1="97" x2="33" y2="104" stroke="#d1d5db" strokeWidth="1.8" />
-            <line x1="215" y1="142" x2="243" y2="142" stroke="#d1d5db" strokeWidth="1.4" />
-            <line x1="68" y1="234" x2="89" y2="246" stroke="#d1d5db" strokeWidth="1.6" />
-            <line x1="182" y1="28" x2="206" y2="36" stroke="#d1d5db" strokeWidth="1.2" />
-
-            {/* Longues */}
-            <line x1="104" y1="283" x2="138" y2="283" stroke="#d1d5db" strokeWidth="2" />
-            <line x1="47" y1="65" x2="76" y2="79" stroke="#d1d5db" strokeWidth="1.5" />
-            <line x1="268" y1="214" x2="295" y2="206" stroke="#d1d5db" strokeWidth="1.7" />
-
-            {/* Quelques très dispersées */}
-            <line x1="154" y1="119" x2="163" y2="127" stroke="#d1d5db" strokeWidth="0.9" />
-            <line x1="12" y1="272" x2="28" y2="268" stroke="#d1d5db" strokeWidth="1.3" />
-            <line x1="231" y1="163" x2="251" y2="176" stroke="#d1d5db" strokeWidth="1.1" />
-            <line x1="95" y1="41" x2="108" y2="41" stroke="#d1d5db" strokeWidth="1.4" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#randomLines)" />
-      </svg>
-
-      {/* Overlay très léger pour adoucir */}
-      <div className="absolute inset-0 bg-white/20" style={{ zIndex: 0 }} />
-
+    <div className="flex min-h-screen flex-col bg-zinc-50">
       {/* Header */}
-      <div className="relative border-b border-white/20 bg-black/10 px-4 py-3 backdrop-blur-sm" style={{ zIndex: 1 }}>
+      <div className="border-b border-zinc-200 bg-white px-4 py-3">
         <div className="flex items-center gap-4">
           <Link
             href={`/organization/${board.organization.slug}`}
-            className="text-white/80 hover:text-white"
+            className="text-zinc-600 hover:text-zinc-900"
           >
             <ArrowLeft className="h-5 w-5" />
           </Link>
-          <h1 className="text-xl font-bold text-white">{board.title}</h1>
+          <h1 className="text-xl font-bold text-zinc-900">{board.title}</h1>
         </div>
       </div>
 
       {/* Board */}
-      <div className="relative flex-1 overflow-x-auto p-4" style={{ zIndex: 1 }}>
+      <div className="flex-1 overflow-x-auto p-4">
         <DndContext
           sensors={sensors}
           onDragStart={handleDragStart}
@@ -235,7 +195,7 @@ export default function BoardCanvas({ board: initialBoard }: Props) {
             {/* Add new list */}
             <div className="w-72 flex-shrink-0">
               {showNewList ? (
-                <div className="rounded-lg bg-black/20 p-3 backdrop-blur-sm">
+                <div className="rounded-lg bg-zinc-200 p-3">
                   <Input
                     value={newListTitle}
                     onChange={(e) => setNewListTitle(e.target.value)}
@@ -265,7 +225,6 @@ export default function BoardCanvas({ board: initialBoard }: Props) {
                       }}
                       variant="ghost"
                       size="sm"
-                      className="text-white hover:bg-white/20"
                     >
                       Annuler
                     </Button>
@@ -275,7 +234,7 @@ export default function BoardCanvas({ board: initialBoard }: Props) {
                 <Button
                   onClick={() => setShowNewList(true)}
                   variant="ghost"
-                  className="w-full justify-start bg-white/20 text-white hover:bg-white/30"
+                  className="w-full justify-start bg-zinc-200 hover:bg-zinc-300"
                 >
                   <Plus className="h-4 w-4" />
                   Ajouter une liste
