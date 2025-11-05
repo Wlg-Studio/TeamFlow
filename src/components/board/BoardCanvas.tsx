@@ -178,14 +178,14 @@ export default function BoardCanvas({ board: initialBoard }: Props) {
       </div>
 
       {/* Board */}
-      <div className="flex-1 overflow-x-auto overflow-y-hidden p-4">
+      <div className="flex-1 overflow-x-auto overflow-y-hidden p-4 min-h-0">
         <DndContext
           sensors={sensors}
           onDragStart={handleDragStart}
           onDragOver={handleDragOver}
           onDragEnd={handleDragEnd}
         >
-          <div className="flex gap-4 h-full">
+          <div className="flex gap-4 h-full items-start">
             <SortableContext items={board.lists.map((list) => list.id)}>
               {board.lists.map((list) => (
                 <ListComponent key={list.id} list={list} boardId={board.id} />
