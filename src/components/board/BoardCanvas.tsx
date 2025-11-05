@@ -169,9 +169,10 @@ export default function BoardCanvas({ board: initialBoard }: Props) {
         className="fixed inset-0 w-screen h-screen"
         style={{
           backgroundImage: `url(/img/bird-7504597.jpg)`,
-          backgroundSize: 'cover',
+          backgroundSize: 'contain',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
+          backgroundColor: '#f5f5f5',
           zIndex: 0
         }}
       />
