@@ -162,53 +162,39 @@ export default function BoardCanvas({ board: initialBoard }: Props) {
     })
   }
 
-  // Options de fond - décommentez celle que vous préférez
-  const backgroundStyles = {
-    // OPTION 1: Pattern géométrique subtil (lignes diagonales)
-    option1: {
-      background: `
-        repeating-linear-gradient(
-          45deg,
-          #f8f9fa,
-          #f8f9fa 10px,
-          #e9ecef 10px,
-          #e9ecef 11px
-        )
-      `
-    },
-
-    // OPTION 2: Gradient élégant avec grain
-    option2: {
-      background: `
-        linear-gradient(135deg, #667eea 0%, #764ba2 100%)
-      `,
-      position: 'relative' as const
-    },
-
-    // OPTION 3: Texture papier (pattern CSS)
-    option3: {
-      backgroundColor: '#f5f5f5',
-      backgroundImage: `
-        radial-gradient(circle at 20% 50%, transparent 20%, rgba(0,0,0,.02) 21%, rgba(0,0,0,.02) 34%, transparent 35%, transparent),
-        radial-gradient(circle at 60% 30%, transparent 20%, rgba(0,0,0,.02) 21%, rgba(0,0,0,.02) 34%, transparent 35%, transparent),
-        radial-gradient(circle at 80% 70%, transparent 20%, rgba(0,0,0,.02) 21%, rgba(0,0,0,.02) 34%, transparent 35%, transparent)
-      `,
-      backgroundSize: '200px 200px, 180px 180px, 220px 220px'
-    },
-
-    // OPTION 4: Gradient simple et pro
-    option4: {
-      background: `linear-gradient(135deg, #667eea 0%, #764ba2 100%)`
-    }
-  }
-
   return (
-    <div
-      className="flex min-h-screen flex-col relative"
-      style={backgroundStyles.option2} // 👈 CHANGEZ ICI : option1, option2, option3, option4
-    >
-      {/* Overlay pour adoucir */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/10 to-black/20" style={{ zIndex: 0 }} />
+    <div className="flex min-h-screen flex-col relative bg-zinc-50">
+      {/* Pattern de lignes courtes aléatoires */}
+      <svg className="absolute inset-0 w-full h-full" style={{ zIndex: 0 }}>
+        <defs>
+          <pattern id="randomLines" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
+            {/* Lignes courtes de différentes tailles et orientations */}
+            <line x1="20" y1="30" x2="45" y2="30" stroke="#d1d5db" strokeWidth="1.5" />
+            <line x1="70" y1="25" x2="85" y2="35" stroke="#d1d5db" strokeWidth="1" />
+            <line x1="120" y1="40" x2="155" y2="40" stroke="#d1d5db" strokeWidth="2" />
+            <line x1="160" y1="20" x2="175" y2="32" stroke="#d1d5db" strokeWidth="1" />
+
+            <line x1="35" y1="80" x2="60" y2="85" stroke="#d1d5db" strokeWidth="1.5" />
+            <line x1="90" y1="70" x2="110" y2="70" stroke="#d1d5db" strokeWidth="1" />
+            <line x1="140" y1="90" x2="165" y2="82" stroke="#d1d5db" strokeWidth="1.5" />
+            <line x1="180" y1="75" x2="195" y2="75" stroke="#d1d5db" strokeWidth="1" />
+
+            <line x1="15" y1="120" x2="38" y2="128" stroke="#d1d5db" strokeWidth="1" />
+            <line x1="55" y1="130" x2="80" y2="130" stroke="#d1d5db" strokeWidth="2" />
+            <line x1="105" y1="115" x2="125" y2="122" stroke="#d1d5db" strokeWidth="1" />
+            <line x1="145" y1="135" x2="175" y2="135" stroke="#d1d5db" strokeWidth="1.5" />
+
+            <line x1="25" y1="165" x2="42" y2="172" stroke="#d1d5db" strokeWidth="1.5" />
+            <line x1="68" y1="170" x2="88" y2="165" stroke="#d1d5db" strokeWidth="1" />
+            <line x1="115" y1="180" x2="145" y2="180" stroke="#d1d5db" strokeWidth="1" />
+            <line x1="165" y1="175" x2="185" y2="182" stroke="#d1d5db" strokeWidth="2" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#randomLines)" />
+      </svg>
+
+      {/* Overlay très léger pour adoucir */}
+      <div className="absolute inset-0 bg-white/40" style={{ zIndex: 0 }} />
 
       {/* Header */}
       <div className="relative border-b border-white/20 bg-black/10 px-4 py-3 backdrop-blur-sm" style={{ zIndex: 1 }}>
