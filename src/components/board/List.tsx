@@ -48,10 +48,10 @@ export default function ListComponent({ list, boardId }: Props) {
   return (
     <div
       ref={setNodeRef}
-      className="w-72 flex-shrink-0 rounded-lg bg-zinc-100 p-3 dark:bg-zinc-900"
+      className="w-72 flex-shrink-0 rounded-lg bg-zinc-100 p-3 dark:bg-zinc-900 flex flex-col max-h-full"
     >
       {/* List Header */}
-      <div className="mb-2 flex items-center justify-between">
+      <div className="mb-2 flex items-center justify-between flex-shrink-0">
         <h3 className="font-semibold text-zinc-900 dark:text-zinc-50">
           {list.title}
         </h3>
@@ -64,7 +64,7 @@ export default function ListComponent({ list, boardId }: Props) {
       </div>
 
       {/* Cards */}
-      <div className="space-y-2">
+      <div className="space-y-2 overflow-y-auto flex-1 min-h-0">
         <SortableContext
           items={list.cards.map((card) => card.id)}
           strategy={verticalListSortingStrategy}
