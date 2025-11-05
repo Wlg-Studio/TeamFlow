@@ -162,18 +162,53 @@ export default function BoardCanvas({ board: initialBoard }: Props) {
     })
   }
 
+  // Options de fond - décommentez celle que vous préférez
+  const backgroundStyles = {
+    // OPTION 1: Pattern géométrique subtil (lignes diagonales)
+    option1: {
+      background: `
+        repeating-linear-gradient(
+          45deg,
+          #f8f9fa,
+          #f8f9fa 10px,
+          #e9ecef 10px,
+          #e9ecef 11px
+        )
+      `
+    },
+
+    // OPTION 2: Gradient élégant avec grain
+    option2: {
+      background: `
+        linear-gradient(135deg, #667eea 0%, #764ba2 100%)
+      `,
+      position: 'relative' as const
+    },
+
+    // OPTION 3: Texture papier (pattern CSS)
+    option3: {
+      backgroundColor: '#f5f5f5',
+      backgroundImage: `
+        radial-gradient(circle at 20% 50%, transparent 20%, rgba(0,0,0,.02) 21%, rgba(0,0,0,.02) 34%, transparent 35%, transparent),
+        radial-gradient(circle at 60% 30%, transparent 20%, rgba(0,0,0,.02) 21%, rgba(0,0,0,.02) 34%, transparent 35%, transparent),
+        radial-gradient(circle at 80% 70%, transparent 20%, rgba(0,0,0,.02) 21%, rgba(0,0,0,.02) 34%, transparent 35%, transparent)
+      `,
+      backgroundSize: '200px 200px, 180px 180px, 220px 220px'
+    },
+
+    // OPTION 4: Gradient simple et pro
+    option4: {
+      background: `linear-gradient(135deg, #667eea 0%, #764ba2 100%)`
+    }
+  }
+
   return (
     <div
       className="flex min-h-screen flex-col relative"
-      style={{
-        backgroundImage: `url(/img/bird-7504597.jpg)`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}
+      style={backgroundStyles.option2} // 👈 CHANGEZ ICI : option1, option2, option3, option4
     >
-      {/* Overlay flou */}
-      <div className="absolute inset-0 backdrop-blur-sm bg-black/20" style={{ zIndex: 0 }} />
+      {/* Overlay pour adoucir */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black/10 to-black/20" style={{ zIndex: 0 }} />
 
       {/* Header */}
       <div className="relative border-b border-white/20 bg-black/10 px-4 py-3 backdrop-blur-sm" style={{ zIndex: 1 }}>
