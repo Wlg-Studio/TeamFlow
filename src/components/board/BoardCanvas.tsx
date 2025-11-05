@@ -167,27 +167,35 @@ export default function BoardCanvas({ board: initialBoard }: Props) {
       {/* Pattern de lignes courtes aléatoires */}
       <svg className="absolute inset-0 w-full h-full" style={{ zIndex: 0 }}>
         <defs>
-          <pattern id="randomLines" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
-            {/* Lignes courtes de différentes tailles et orientations */}
-            <line x1="20" y1="30" x2="45" y2="30" stroke="#d1d5db" strokeWidth="1.5" />
-            <line x1="70" y1="25" x2="85" y2="35" stroke="#d1d5db" strokeWidth="1" />
-            <line x1="120" y1="40" x2="155" y2="40" stroke="#d1d5db" strokeWidth="2" />
-            <line x1="160" y1="20" x2="175" y2="32" stroke="#d1d5db" strokeWidth="1" />
+          <pattern id="randomLines" x="0" y="0" width="300" height="300" patternUnits="userSpaceOnUse">
+            {/* Lignes courtes dispersées aléatoirement avec tailles variées */}
+            {/* Très courtes */}
+            <line x1="42" y1="18" x2="54" y2="22" stroke="#d1d5db" strokeWidth="1" />
+            <line x1="198" y1="265" x2="207" y2="271" stroke="#d1d5db" strokeWidth="0.8" />
+            <line x1="83" y1="142" x2="94" y2="138" stroke="#d1d5db" strokeWidth="1.2" />
 
-            <line x1="35" y1="80" x2="60" y2="85" stroke="#d1d5db" strokeWidth="1.5" />
-            <line x1="90" y1="70" x2="110" y2="70" stroke="#d1d5db" strokeWidth="1" />
-            <line x1="140" y1="90" x2="165" y2="82" stroke="#d1d5db" strokeWidth="1.5" />
-            <line x1="180" y1="75" x2="195" y2="75" stroke="#d1d5db" strokeWidth="1" />
+            {/* Courtes */}
+            <line x1="127" y1="51" x2="148" y2="51" stroke="#d1d5db" strokeWidth="1.5" />
+            <line x1="25" y1="203" x2="39" y2="216" stroke="#d1d5db" strokeWidth="1" />
+            <line x1="245" y1="89" x2="263" y2="96" stroke="#d1d5db" strokeWidth="1.3" />
+            <line x1="163" y1="178" x2="178" y2="172" stroke="#d1d5db" strokeWidth="1.1" />
 
-            <line x1="15" y1="120" x2="38" y2="128" stroke="#d1d5db" strokeWidth="1" />
-            <line x1="55" y1="130" x2="80" y2="130" stroke="#d1d5db" strokeWidth="2" />
-            <line x1="105" y1="115" x2="125" y2="122" stroke="#d1d5db" strokeWidth="1" />
-            <line x1="145" y1="135" x2="175" y2="135" stroke="#d1d5db" strokeWidth="1.5" />
+            {/* Moyennes */}
+            <line x1="8" y1="97" x2="33" y2="104" stroke="#d1d5db" strokeWidth="1.8" />
+            <line x1="215" y1="142" x2="243" y2="142" stroke="#d1d5db" strokeWidth="1.4" />
+            <line x1="68" y1="234" x2="89" y2="246" stroke="#d1d5db" strokeWidth="1.6" />
+            <line x1="182" y1="28" x2="206" y2="36" stroke="#d1d5db" strokeWidth="1.2" />
 
-            <line x1="25" y1="165" x2="42" y2="172" stroke="#d1d5db" strokeWidth="1.5" />
-            <line x1="68" y1="170" x2="88" y2="165" stroke="#d1d5db" strokeWidth="1" />
-            <line x1="115" y1="180" x2="145" y2="180" stroke="#d1d5db" strokeWidth="1" />
-            <line x1="165" y1="175" x2="185" y2="182" stroke="#d1d5db" strokeWidth="2" />
+            {/* Longues */}
+            <line x1="104" y1="283" x2="138" y2="283" stroke="#d1d5db" strokeWidth="2" />
+            <line x1="47" y1="65" x2="76" y2="79" stroke="#d1d5db" strokeWidth="1.5" />
+            <line x1="268" y1="214" x2="295" y2="206" stroke="#d1d5db" strokeWidth="1.7" />
+
+            {/* Quelques très dispersées */}
+            <line x1="154" y1="119" x2="163" y2="127" stroke="#d1d5db" strokeWidth="0.9" />
+            <line x1="12" y1="272" x2="28" y2="268" stroke="#d1d5db" strokeWidth="1.3" />
+            <line x1="231" y1="163" x2="251" y2="176" stroke="#d1d5db" strokeWidth="1.1" />
+            <line x1="95" y1="41" x2="108" y2="41" stroke="#d1d5db" strokeWidth="1.4" />
           </pattern>
         </defs>
         <rect width="100%" height="100%" fill="url(#randomLines)" />
