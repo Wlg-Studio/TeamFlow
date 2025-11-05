@@ -36,7 +36,7 @@ export default function ListComponent({ list, boardId }: Props) {
   }
 
   const handleDeleteList = async () => {
-    if (!confirm(`Delete list "${list.title}"? All cards in this list will be deleted.`)) {
+    if (!confirm(`Supprimer la liste « ${list.title} » ? Toutes les cartes de cette liste seront supprimées.`)) {
       return
     }
 
@@ -80,7 +80,7 @@ export default function ListComponent({ list, boardId }: Props) {
             <Input
               value={newCardTitle}
               onChange={(e) => setNewCardTitle(e.target.value)}
-              placeholder="Enter card title..."
+              placeholder="Entrer le titre de la carte..."
               className="bg-white dark:bg-zinc-800"
               onKeyDown={(e) => {
                 if (e.key === "Enter") handleCreateCard()
@@ -97,7 +97,7 @@ export default function ListComponent({ list, boardId }: Props) {
                 disabled={isPending || !newCardTitle.trim()}
                 size="sm"
               >
-                Add card
+                Ajouter une carte
               </Button>
               <Button
                 onClick={() => {
@@ -107,7 +107,7 @@ export default function ListComponent({ list, boardId }: Props) {
                 variant="ghost"
                 size="sm"
               >
-                Cancel
+                Annuler
               </Button>
             </div>
           </div>
@@ -119,7 +119,7 @@ export default function ListComponent({ list, boardId }: Props) {
             size="sm"
           >
             <Plus className="h-4 w-4" />
-            Add a card
+            Ajouter une carte
           </Button>
         )}
       </div>

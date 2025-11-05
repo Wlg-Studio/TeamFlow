@@ -35,7 +35,7 @@ export default function CreateBoardPage() {
       const data = await response.json()
 
       if (!response.ok) {
-        throw new Error(data.error || "Failed to create board")
+        throw new Error(data.error || "Échec de la création du board")
       }
 
       router.push(`/board/${data.id}`)
@@ -54,15 +54,15 @@ export default function CreateBoardPage() {
           className="inline-flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50"
         >
           <ArrowLeft className="h-4 w-4" />
-          Back to workspace
+          Retour à l'organisation
         </Link>
 
         <div className="mt-8">
           <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
-            Create a board
+            Créer un board
           </h1>
           <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-            Boards are where you organize tasks with lists and cards
+            Les boards vous permettent d'organiser vos tâches avec des listes et des cartes
           </p>
         </div>
 
@@ -75,33 +75,33 @@ export default function CreateBoardPage() {
             )}
 
             <div className="space-y-2">
-              <Label htmlFor="title">Board title *</Label>
+              <Label htmlFor="title">Titre du board *</Label>
               <Input
                 id="title"
                 type="text"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
-                placeholder="Project Roadmap"
+                placeholder="Feuille de route du projet"
                 required
                 disabled={loading}
               />
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="description">Description (optional)</Label>
+              <Label htmlFor="description">Description (optionnel)</Label>
               <Input
                 id="description"
                 type="text"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
-                placeholder="Track our project milestones and tasks"
+                placeholder="Suivre nos jalons et tâches du projet"
                 disabled={loading}
               />
             </div>
 
             <div className="flex gap-3">
               <Button type="submit" disabled={loading}>
-                {loading ? "Creating..." : "Create board"}
+                {loading ? "Création..." : "Créer le board"}
               </Button>
               <Button
                 type="button"
@@ -109,7 +109,7 @@ export default function CreateBoardPage() {
                 onClick={() => router.back()}
                 disabled={loading}
               >
-                Cancel
+                Annuler
               </Button>
             </div>
           </form>

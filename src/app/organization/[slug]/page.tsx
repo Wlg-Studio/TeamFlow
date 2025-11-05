@@ -69,7 +69,7 @@ export default async function OrganizationPage({ params }: Props) {
           className="inline-flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50"
         >
           <ArrowLeft className="h-4 w-4" />
-          Back to workspaces
+          Retour au tableau de bord
         </Link>
 
         <div className="mb-8 mt-6 flex items-center justify-between">
@@ -86,7 +86,7 @@ export default async function OrganizationPage({ params }: Props) {
           <Link href={`/organization/${slug}/create-board`}>
             <Button>
               <Plus className="h-4 w-4" />
-              Create Board
+              Créer un board
             </Button>
           </Link>
         </div>
@@ -94,15 +94,15 @@ export default async function OrganizationPage({ params }: Props) {
         {organization.boards.length === 0 ? (
           <div className="rounded-lg border border-dashed border-zinc-200 p-12 text-center dark:border-zinc-800">
             <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-50">
-              No boards yet
+              Aucun board pour le moment
             </h3>
             <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-              Get started by creating your first board
+              Commencez par créer votre premier board
             </p>
             <Link href={`/organization/${slug}/create-board`}>
               <Button className="mt-4">
                 <Plus className="h-4 w-4" />
-                Create Board
+                Créer un board
               </Button>
             </Link>
           </div>
@@ -128,7 +128,7 @@ export default async function OrganizationPage({ params }: Props) {
                     {board.title}
                   </h3>
                   <div className="text-xs text-white/80 drop-shadow">
-                    {board._count.lists} lists
+                    {board._count.lists} {board._count.lists > 1 ? 'listes' : 'liste'}
                   </div>
                 </div>
               </Link>

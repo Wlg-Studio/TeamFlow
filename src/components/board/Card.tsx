@@ -53,7 +53,7 @@ export default function CardComponent({ card }: Props) {
         {card.completed && (
           <div className="flex items-center gap-1 rounded bg-green-100 px-2 py-1 text-xs text-green-700 dark:bg-green-900/20 dark:text-green-400">
             <CheckSquare className="h-3 w-3" />
-            Done
+            Terminé
           </div>
         )}
       </div>

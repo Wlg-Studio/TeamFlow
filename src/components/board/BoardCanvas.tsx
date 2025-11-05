@@ -199,7 +199,7 @@ export default function BoardCanvas({ board: initialBoard }: Props) {
                   <Input
                     value={newListTitle}
                     onChange={(e) => setNewListTitle(e.target.value)}
-                    placeholder="Enter list title..."
+                    placeholder="Entrer le titre de la liste..."
                     className="mb-2 bg-white"
                     onKeyDown={(e) => {
                       if (e.key === "Enter") handleCreateList()
@@ -216,7 +216,7 @@ export default function BoardCanvas({ board: initialBoard }: Props) {
                       disabled={isPending || !newListTitle.trim()}
                       size="sm"
                     >
-                      Add list
+                      Ajouter une liste
                     </Button>
                     <Button
                       onClick={() => {
@@ -227,7 +227,7 @@ export default function BoardCanvas({ board: initialBoard }: Props) {
                       size="sm"
                       className="text-white hover:bg-white/20"
                     >
-                      Cancel
+                      Annuler
                     </Button>
                   </div>
                 </div>
@@ -238,7 +238,7 @@ export default function BoardCanvas({ board: initialBoard }: Props) {
                   className="w-full justify-start bg-white/20 text-white hover:bg-white/30"
                 >
                   <Plus className="h-4 w-4" />
-                  Add a list
+                  Ajouter une liste
                 </Button>
               )}
             </div>
