@@ -185,7 +185,7 @@ export default function BoardCanvas({ board: initialBoard }: Props) {
           onDragOver={handleDragOver}
           onDragEnd={handleDragEnd}
         >
-          <div className="flex gap-4">
+          <div className="flex gap-4 h-full">
             <SortableContext items={board.lists.map((list) => list.id)}>
               {board.lists.map((list) => (
                 <ListComponent key={list.id} list={list} boardId={board.id} />
