@@ -163,7 +163,7 @@ export default function BoardCanvas({ board: initialBoard }: Props) {
   }
 
   return (
-    <div className="flex h-screen w-screen flex-col bg-zinc-50 overflow-hidden">
+    <div className="flex h-screen flex-col bg-zinc-50 overflow-hidden">
       {/* Header */}
       <div className="border-b border-zinc-200 bg-white px-4 py-3 flex-shrink-0">
         <div className="flex items-center gap-4">
@@ -178,7 +178,7 @@ export default function BoardCanvas({ board: initialBoard }: Props) {
       </div>
 
       {/* Board */}
-      <div className="flex-1 overflow-x-auto overflow-y-hidden p-4">
+      <div className="flex-1 overflow-x-auto overflow-y-hidden px-4 py-4 min-h-0">
         <DndContext
           sensors={sensors}
           onDragStart={handleDragStart}
