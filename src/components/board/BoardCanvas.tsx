@@ -201,8 +201,8 @@ export default function BoardCanvas({ board: initialBoard }: Props) {
         <rect width="100%" height="100%" fill="url(#randomLines)" />
       </svg>
 
-      {/* Overlay très léger pour adoucir */}
-      <div className="absolute inset-0 bg-white/40" style={{ zIndex: 0 }} />
+      {/* Overlay avec flou pour adoucir */}
+      <div className="absolute inset-0 bg-white/40 backdrop-blur-sm" style={{ zIndex: 0 }} />
 
       {/* Header */}
       <div className="relative border-b border-white/20 bg-black/10 px-4 py-3 backdrop-blur-sm" style={{ zIndex: 1 }}>
