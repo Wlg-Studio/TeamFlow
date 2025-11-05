@@ -26,6 +26,14 @@ export const auth = betterAuth({
       trustedProviders: ["google", "github"],
     },
   },
+  session: {
+    expiresIn: 60 * 60 * 24 * 7, // 7 jours
+    updateAge: 60 * 60 * 24, // Rafraîchir tous les 1 jour
+    cookieCache: {
+      enabled: true,
+      maxAge: 60 * 5, // Cache de 5 minutes
+    },
+  },
   secret: process.env.BETTER_AUTH_SECRET!,
   baseURL: process.env.BETTER_AUTH_URL!,
 })
