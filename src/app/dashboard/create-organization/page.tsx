@@ -51,15 +51,15 @@ export default function CreateOrganizationPage() {
           className="inline-flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50"
         >
           <ArrowLeft className="h-4 w-4" />
-          Back to dashboard
+          Retour au tableau de bord
         </Link>
 
         <div className="mt-8">
           <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
-            Create a workspace
+            Créer une organisation
           </h1>
           <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-            A workspace is where you and your team can collaborate on boards
+            Une organisation est un espace où vous et votre équipe pouvez collaborer sur des boards
           </p>
         </div>
 
@@ -72,36 +72,36 @@ export default function CreateOrganizationPage() {
             )}
 
             <div className="space-y-2">
-              <Label htmlFor="name">Workspace name *</Label>
+              <Label htmlFor="name">Nom de l'organisation *</Label>
               <Input
                 id="name"
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="Acme Inc."
+                placeholder="Mon Entreprise"
                 required
                 disabled={loading}
               />
               <p className="text-xs text-zinc-500 dark:text-zinc-400">
-                This will be visible to all workspace members
+                Ce nom sera visible par tous les membres de l'organisation
               </p>
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="description">Description (optional)</Label>
+              <Label htmlFor="description">Description (optionnel)</Label>
               <Input
                 id="description"
                 type="text"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
-                placeholder="A workspace for our team projects"
+                placeholder="Un espace pour nos projets d'équipe"
                 disabled={loading}
               />
             </div>
 
             <div className="flex gap-3">
               <Button type="submit" disabled={loading}>
-                {loading ? "Creating..." : "Create workspace"}
+                {loading ? "Création..." : "Créer l'organisation"}
               </Button>
               <Button
                 type="button"
@@ -109,7 +109,7 @@ export default function CreateOrganizationPage() {
                 onClick={() => router.back()}
                 disabled={loading}
               >
-                Cancel
+                Annuler
               </Button>
             </div>
           </form>
