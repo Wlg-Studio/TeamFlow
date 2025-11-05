@@ -163,25 +163,20 @@ export default function BoardCanvas({ board: initialBoard }: Props) {
   }
 
   return (
-    <div className="flex min-h-screen flex-col relative overflow-hidden">
-      {/* Image de fond plein écran */}
-      <div
-        className="fixed inset-0 w-screen h-screen"
-        style={{
-          backgroundImage: `url(/img/bird-7504597.jpg)`,
-          backgroundSize: 'contain',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundColor: '#f5f5f5',
-          zIndex: 0
-        }}
-      />
-
+    <div
+      className="flex min-h-screen flex-col relative"
+      style={{
+        backgroundImage: `url(/img/bird-7504597.jpg)`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
       {/* Overlay flou */}
-      <div className="fixed inset-0 backdrop-blur-sm bg-black/20" style={{ zIndex: 1 }} />
+      <div className="absolute inset-0 backdrop-blur-sm bg-black/20" style={{ zIndex: 0 }} />
 
       {/* Header */}
-      <div className="relative border-b border-white/20 bg-black/10 px-4 py-3 backdrop-blur-sm" style={{ zIndex: 2 }}>
+      <div className="relative border-b border-white/20 bg-black/10 px-4 py-3 backdrop-blur-sm" style={{ zIndex: 1 }}>
         <div className="flex items-center gap-4">
           <Link
             href={`/organization/${board.organization.slug}`}
@@ -194,7 +189,7 @@ export default function BoardCanvas({ board: initialBoard }: Props) {
       </div>
 
       {/* Board */}
-      <div className="relative flex-1 overflow-x-auto p-4" style={{ zIndex: 2 }}>
+      <div className="relative flex-1 overflow-x-auto p-4" style={{ zIndex: 1 }}>
         <DndContext
           sensors={sensors}
           onDragStart={handleDragStart}
