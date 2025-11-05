@@ -178,7 +178,7 @@ export default function BoardCanvas({ board: initialBoard }: Props) {
       </div>
 
       {/* Board */}
-      <div className="flex-1 overflow-x-auto p-4 min-h-0">
+      <div className="flex-1 overflow-x-auto overflow-y-hidden p-4">
         <DndContext
           sensors={sensors}
           onDragStart={handleDragStart}
