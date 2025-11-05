@@ -29,7 +29,10 @@
       "Bash(git commit:*)",
       "Bash(git checkout:*)",
       "Bash(curl http://localhost:3000/api/auth/callback/github)",
-      "Bash(git merge:*)"
+      "Bash(git merge:*)",
+      "Bash(git fetch:*)",
+      "Bash(git stash:*)",
+      "WebSearch"
     ],
     "deny": [],
     "ask": []
