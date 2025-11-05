@@ -32,7 +32,8 @@
       "Bash(git merge:*)",
       "Bash(git fetch:*)",
       "Bash(git stash:*)",
-      "WebSearch"
+      "WebSearch",
+      "WebFetch(domain:www.better-auth.com)"
     ],
     "deny": [],
     "ask": []
